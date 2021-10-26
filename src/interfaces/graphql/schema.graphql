@@ -1,0 +1,23 @@
+# schema.graphql
+type Query {
+    getLunchBoxByOwner(firstName: String, lastName: String): [LunchBox]
+}
+
+type Mutation {
+    createLunchBox(owner: PersonInput!, items: [String]!): Boolean
+}
+
+input PersonInput {
+    firstName: String!
+    lastName: String!
+}
+
+type LunchBox {
+    owner: Person!
+    items: [String]!
+}
+
+type Person {
+    firstName: String!
+    lastName: String!
+}
